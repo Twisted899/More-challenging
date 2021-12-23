@@ -101,7 +101,7 @@ function setup() {
   bunny.addAnimation('eating',eat);
   bunny.addAnimation('crying',sad);
   bunny.changeAnimation('blinking');
-  fruit = Bodies.circle(300,300,20,{isStatic:true});
+  fruit = Bodies.circle(300,300,20,{isStatic:false,density:0.0001});
 
   Matter.Composite.add(rope1.body,fruit);
   Matter.Composite.add(rope2.body,fruit);
@@ -165,7 +165,6 @@ function drop1()
   rope1.break();
   fruit_con1.detach();
   fruit_con1 = null; 
-  Matter.Body.setStatic(fruit,false)
 }
 function drop2()
 {
@@ -173,7 +172,6 @@ function drop2()
   rope2.break();
   fruit_con2.detach();
   fruit_con2 = null; 
-  Matter.Body.setStatic(fruit,false)
 }
 function drop3()
 {
@@ -181,7 +179,6 @@ function drop3()
   rope3.break();
   fruit_con3.detach();
   fruit_con3 = null; 
-  Matter.Body.setStatic(fruit,false)
 }
 
 function collide(body,sprite)
